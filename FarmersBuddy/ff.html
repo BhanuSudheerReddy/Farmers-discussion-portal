@@ -1,0 +1,128 @@
+<html>
+<head>
+<style type="text/css">
+body{
+    background-image:url("");
+    background-size:cover;
+    font-family:times new roman;
+    font-size:20px;
+    margin:0;
+    line-height:24px;
+}
+
+.navbar{
+    text-align:center;
+    width:100%;
+    background:blue;
+    opacity:0.5;
+}
+.navbar ul{
+    margin:0;
+    padding:0;
+    list-style:none;
+    position:relative;
+}
+.navbar ul li a{
+    display:block;
+    padding:25px;
+    color:white;
+    text-decoration:none;
+    width:150px;
+}
+.navbar ul:after{
+    content:""; clear:both;
+    display:block;
+}
+.navbar ul li{
+    float:left;
+    listy-style:none;
+}
+.navbar ul ul{
+display:none;
+}
+.navbar ul li:hover>ul{
+     display:block;
+}
+.navbar ul li:hover{
+     background:black;
+     transition:0.9s;
+}
+.navbar ul li:hover a{
+     color:white;
+}
+.navbar ul ul{
+     background:black;
+     padding:0;
+     margin:0;
+     position:absolute; top:100%;
+}
+.navbar ul ul li{
+     float:none;
+     position:relative;
+}
+.navbar ul ul li a{
+     padding:25px;
+     color:white;
+     width:300px;
+     text-align:left;
+}
+.navbar ul ul li a:hover{
+      background:lightblue;
+      color:black;
+      transition:0.9s;
+}
+</style>
+<script type="text/javascript">
+function validate(){
+var a=document.forms["form1"]["dissg"].value;
+var b=document.forms["form1"]["wow"].value;
+var c=/^\d[0-9]{,14}$/;
+if(a.length<14){
+alert("Enter valid adhar number");
+return false;
+}
+if(b==""){
+alert("problem should be given");
+return false;
+}
+if(c!=a){
+alert("Enter the valid adhar number");
+return false;
+} 
+}
+</script>
+</head>
+<body>
+
+<div class="navbar">
+    <ul>
+    
+                 
+        <li><a href="#">BRANCHES</a>
+             <ul><li><a href="#">HYDERABAD</a></li>
+                 <li><a href="#">CHENNAI</a></li>
+                 <li><a href="#">BANGLORE</a></li>
+                 <li><a href="#">DELHI</a></li>
+             </ul>
+        </li>
+        <li><a href="#">CONTACT</a>
+             <ul><li><a href="#">MANAGER-8979867654</a></li>
+                 <li><a href="#">HELPLINE-7562314689</a></li>
+                 <li><a href="#">ORGANISER-9806542341</a></li>
+                 <li><a href="#">CO-ORDINATOR-9054321234</a></li>
+             </ul>
+        </li>
+     </ul>
+</div>
+<center>
+<form method="post" onsubmit="validate()" name="form1" action="issue.php">
+<table><br>
+<tr><td>Enter your adhar number</td><td><input type="number" name="dissg"></td></tr>
+<tr><td>Enter your problem:</td><td><textarea cols="40" rows="20" name="wow"></textarea></td></tr>
+
+<tr><td><input type="submit" value="submit"></td></tr>
+</table>
+</form>
+</center>
+</body>
+</html>
